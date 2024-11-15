@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "e0b9e02a-02ac-42af-b8b0-b8daafa10476",
+		"name": "CRUD Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15345065"
+	},
+	"item": [
+		{
+			"name": "POSTS",
+			"item": [
+				{
+					"name": "Create Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODU5YTZlMThkNjdjYjA4ZDdkYjY0NDY4Mzg5MmU2ZjQxOTQ5YjFlMjBhZjgyZWI4OTU5MWEyYjlkMGY2ZWVhNWNkNzk1MTNmM2M1ZDU4YTAiLCJpYXQiOjE3MzE2NTA1NTMuMzIzNDQ1LCJuYmYiOjE3MzE2NTA1NTMuMzIzNDQ4LCJleHAiOjE3NjMxODY1NTMuMzEwMTgxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Zasrs73Gim6xPKLr4ByDOoCVfbkt9va1xJW2WVYM5LrBRZ9YlrdZvR5qbnLPsrMqubga5pohQHEoGV4XMgxrh1vxTEdBWB1hwWwOpTSA4AOfN67ACMZ7mNPbPnTbe6c_sQeKFrLStdtb6OdOA3uwPKHBH2VmMCAa8yDTb0Rq92LibUKUTV-L3SWJnh0Yz5jQ9r-nPM87nbKLDgX-aCdTIRAWahmEkFSXsa1BD7YtQj2Qx_EFPIsJ2JI1c_Zb2gMIryvVPwsnb7HJv7CyHjmMmD0I4p3GR5wQrLXGFu4v60pMDq-v3bSnh8x8aj_BsMmEj0LbTnxGOR0YmiwZC-1fswNhFulwipDzE9SIJ2dQzZZdkFAv-uk9c0EYQ_2Xn53yLaAoD59kTuDh17FDw3OSNHcJXAGlUnTIikaO6E-9ZTAVRUGG8iVoK6BFXWqV-_KFFjU5ozTv8YabR_ZBmQ9pxpP_jSdmPdDnfhwA4T6MeIG5MY6Th-0K_XFkolSeFS7xHeEA2Rm9iRX41CrUvBt366rVeu8Xz0ysT-hj2acwx6gMv_jQSxcvqom71gXwGVFIxwwsHRt0l2QH26vzdN1NZvSwkaxff4iQLGNb4kEds7gTGOog-4sJAW4z2dmfjzPbLaGJ2X7TBa_jFS8f9QVoLEdCX2C25WEuj2F6MPd137I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Test Title ok",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test content ok ",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "priyanshu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.232.201:8000/api/blogs/create",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"232",
+								"201"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blogs",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.232.201:8000/api/blogs/list",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"232",
+								"201"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blogs",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "updated title",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "update content",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "lavany",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.232.201:8000/api/blogs/update",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"232",
+								"201"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blogs",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.232.201:8000/api/blogs/details/2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"232",
+								"201"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blogs",
+								"details",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.232.201:8000/api/blogs/delete/2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"232",
+								"201"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blogs",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "priyanshu@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.232.201:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"232",
+						"201"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
