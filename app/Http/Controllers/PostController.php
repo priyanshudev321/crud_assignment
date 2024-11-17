@@ -22,9 +22,9 @@ class PostController extends Controller
             Log::info( "All inputs of creating posts :: ", $input );
 
             $validation = Validator::make($input, [
-                'title' => 'required|string|max:255',
+                'title' => 'required|string|max:50',
                 'content' => 'required|string',
-                'author' => 'nullable|string|max:255'
+                'author' => 'nullable|string|max:50'
             ]);
 
             if($validation->fails()){
@@ -130,9 +130,9 @@ class PostController extends Controller
 
             $validation = Validator::make($input, [
                 'id' => 'required|integer',
-                'title' => 'required|string|max:255',
+                'title' => 'required|string|max:50',
                 'content' => 'required|string',
-                'author' => 'nullable|string|max:255'
+                'author' => 'nullable|string|max:50'
             ]);
 
             if($validation->fails()){
@@ -143,7 +143,7 @@ class PostController extends Controller
             $post = Post::find($id);
 
             if(!$post){
-                throw new \Exception( ' Invalid Post ID. ' );
+                throw new \Exception( ' Invalid Post ID. ' ); // If Post ID is invalid than it throw exception here
             }
 
             $update = Post::where('id', $id)->update([
