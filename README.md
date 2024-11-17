@@ -41,3 +41,11 @@ Setup a migration for posts (create_posts_table) with title, content, author, ti
 6. Feature test is setup for creating the POST and another feature test for updating the post ( test_create_post && test_update_post ).
 
 
+## New Functionality
+1. Created a Login/Register Pages for authentication using Laravel breeze, for css here tailwind css is used because breeze used tailwind by its default.
+
+2. created new routes for CRUD view and functionalities under auth middleware .
+
+3. Profile routes for user profile information, update password, delete account - this functionality is deffault given by laravel breeze.
+
+
